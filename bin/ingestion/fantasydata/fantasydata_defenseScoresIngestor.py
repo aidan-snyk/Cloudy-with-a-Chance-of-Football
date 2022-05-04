@@ -24,7 +24,7 @@ if __name__ == '__main__':
         r = requests.get(
             url = n,
             headers={'Ocp-Apim-Subscription-Key': str(api_key_fantasydata)},
-            verify = False
+            verify = True #intentional vulnerability -- switch to true
         )
         r = r.json()
         pre_normalized_dataframe = pd.json_normalize(r, max_level=1)
